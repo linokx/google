@@ -15,9 +15,13 @@ class Annonce extends CI_Controller {
 	public function lister()
 	{
 		$this->session->set_flashdata('current_url',current_url());
-		$this->load->helper('form');
-		$data['main_title'] = "Google+";
-		$data['vue'] = $this->load->view('member_form','',true);
+		$this->load->model('M_Annonce');
+		$data['annonces'] = $this->M_Annonce->lister();
+		$data['subtitle'] = "Toutes les annonces";
+		$data['vue'] = $this->load->view('lister',$data,true);
+		
+		$data['main_title'] = 'Liste des annonces';
+		
 		$this->load->view('layout',$data);
 	}
 }
