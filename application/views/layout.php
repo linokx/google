@@ -2,7 +2,7 @@
 <html lang="fr-BE">
 <head>
 	<meta charset="UTF-8">
-	<title>Adopte un prof - <?php echo $titre; ?></title>
+	<title><?php echo $main_title; ?></title>
 </head>
 <body>
 <h1>Adopte un prof</h1>

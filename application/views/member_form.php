@@ -2,12 +2,12 @@
 	<h2>Connexion à votre compte</h2>
 	<?php
 		echo form_open('member/login',array('method'=>'post'));
-		echo form_label('adresse email','email');
-		$emailInput = array(
-					'name' => 'email',
-					'id' => 'email'
+		echo form_label('Login','nom');
+		$loginInput = array(
+					'name' => 'nom',
+					'id' => 'nom'
 					);
-		echo form_input($emailInput);
+		echo form_input($loginInput);
 		echo '<br />';
 		echo form_label('mot de passe','mpd');
 		$mdpInput = array(
