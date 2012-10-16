@@ -24,5 +24,42 @@ class Annonce extends CI_Controller {
 		
 		$this->load->view('layout',$data);
 	}
+	public function test()
+	{
+
+		$this->load->helper('form');
+		$url = $this->input->post('url');
+		$data= '';
+		if($url != null):
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, 'http://'.$url);
+			//curl_setopt($ch,CURLOPT_POST,true);
+			curl_setopt($ch, CURLOPT_HEADER, 0);
+			curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
+
+			// récupération de l'URL et affichage sur le naviguateur
+			
+
+			$resultat = curl_exec($ch);
+			// fermeture de la session cURL
+			curl_close($ch);
+			
+			/*if(preg_match('#<title>(.+)</title>#isU', $resultat, $m, PREG_OFFSET_CAPTURE)){
+
+				$data['titre'] = $m[1][0];
+			}
+			else
+			{
+				$data['titre'] = "vide";
+			}*/
+			preg_match('#<title>(.+)</title>#isU', $resultat, $m, PREG_OFFSET_CAPTURE);
+			$data['titre'] = (count($m[1])) ? $m[1][0] : "Page sans titre";
+			preg_match_all('#<img src="(.+)" ?/>#isU',$resultat, $i, PREG_OFFSET_CAPTURE);
+			$data['texte'] = (count($i[1])) ? $i[1] : "Aucune image";
+		endif;
+		$dataLayout['main_title'] = "Ressource externe";
+		$dataLayout['vue'] = $this->load->view('annonce',$data,true);
+		$this->load->view('layout',$dataLayout);
+	}
 }
 ?>
