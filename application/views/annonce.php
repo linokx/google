@@ -21,7 +21,8 @@
 		else
 		{
 			foreach($texte as $img):
-				echo '<img src="http://lettrage-bekaert.eu/'.$img[0].'"/>';
+				$img[0] = preg_replace('#^[^http]/*(.*)$#', 'http://'.$url.'/'.$img[0], $img[0]);
+				echo '<img src="'.$img[0].'" style="display:block" />';
 			endforeach;
 		}
 	endif;

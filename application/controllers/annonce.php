@@ -29,7 +29,7 @@ class Annonce extends CI_Controller {
 
 		$this->load->helper('form');
 		$url = $this->input->post('url');
-		$data= '';
+		$data['url']= $url;
 		if($url != null):
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, 'http://'.$url);
@@ -54,8 +54,10 @@ class Annonce extends CI_Controller {
 			}*/
 			preg_match('#<title>(.+)</title>#isU', $resultat, $m, PREG_OFFSET_CAPTURE);
 			$data['titre'] = (count($m[1])) ? $m[1][0] : "Page sans titre";
-			preg_match_all('#<img src="(.+)" ?/>#isU',$resultat, $i, PREG_OFFSET_CAPTURE);
+			preg_match_all('#<\s*img[^>]*src\s*=\s*"(.*)"#isU',$resultat, $i, PREG_OFFSET_CAPTURE);
+			//preg_match_all('#<img(.+)>#isU',$resultat, $i, PREG_OFFSET_CAPTURE);
 			$data['texte'] = (count($i[1])) ? $i[1] : "Aucune image";
+			//if(preg_match$data['texte'])
 		endif;
 		$dataLayout['main_title'] = "Ressource externe";
 		$dataLayout['vue'] = $this->load->view('annonce',$data,true);
