@@ -1,7 +1,7 @@
 <div id="member">
 	<h2>Connexion à votre compte</h2>
 	<?php
-		echo form_open('member/login',array('method'=>'post'));
+		echo form_open('index.php/member/login',array('method'=>'post'));
 		echo form_label('Login','nom');
 		$loginInput = array(
 					'name' => 'nom',
