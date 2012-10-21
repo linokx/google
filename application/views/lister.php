@@ -14,10 +14,9 @@
 </div>
 <?php
 	if(isset($titre)):
-		var_dump($image);
 		?>
 	<div class="resultat">
-		<h2><a title="<?php echo $url; ?>" href="<?php echo $url; ?>"><?php echo $titre; ?></a></h2>
+		<h2><a title="Visiter la page de <?php echo $titre; ?>" href="<?php echo $url; ?>"><?php echo $titre; ?></a></h2>
 		<?php
 		if(is_string($image)){
 			echo $image;
@@ -28,14 +27,17 @@
 			<div class="slider">
 			<ul>
 				<?php
-			for($i=0; $i<=3 and $i<=sizeof($image[0]); $i++):
+			/*for($i=0; $i<$lenght; $i++):
 				$img = $image[$i];
-				$img[0] = preg_replace('#^[^http]/*(.*)$#', $url.'/'.$img[0], $img[0]);
-				echo '<li><img src="'.$img[0].'" /></li>';
-			endfor;
+				$img = preg_replace('#^[^http]/*(.*)$#', $url.'/'.$img, $img);
+				echo '<li><img src="'.$img.'" /></li>';
+			endfor;*/
+			foreach($image as $img):
+				echo '<li><img src="'.$img.'"/></li>';
+			endforeach;
 			?>
 		</ul>
-	</div>
+		</div>
 		<p><?php echo  $texte; ?></p>
 			<?php
 		}
@@ -52,8 +54,9 @@
 				?>
 				
 				<div class="resultat">
-					<h2>
+					<h2><a title="Visiter la page de <?php echo $annonce->titre;?>" href="<?php echo $annonce->url; ?>">
 						<?php echo $annonce->titre; ?>
+					</a>
 					</h2>
 					<div class="slider">
 						<?php
@@ -63,7 +66,6 @@
 							<?php
 							$images = explode(';',$annonce->photo);
 							foreach($images as $img):				
-								$img = preg_replace('#^[^http]/*(.*)$#', $annonce->url.'/'.$img, $img);
 								echo '<li><img src="'.$img.'" /></li>';
 							endforeach;
 							?>

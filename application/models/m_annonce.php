@@ -13,10 +13,11 @@
 		{
 			$info = array(
 				'id_membre' => $data['id'],
+				'date' => date("Y/m/d"),
 				'url' => $data['url'],
 				'titre' => $data['titre'],
 				'resume' => $data['texte'],
-				'photo' => $data['BDimage'][1],
+				'photo' => $data['BDimage'],
 				'statut' => 'non lu'
 				);
 			$this->db->insert('annonces', $info); 

@@ -6,9 +6,9 @@
 	<title><?php echo $main_title; ?></title>
 </head>
 <body>
-<h1>Recherche un site</h1>
+<h1><a href="<?php echo site_url(); ?>">Recherche un site</a></h1>
 	<?php echo $vue; ?>
-	
+
 	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>  
        
     <script type="text/javascript">  
