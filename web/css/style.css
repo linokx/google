@@ -100,6 +100,10 @@ body {
   width: 800px;
   padding: 20px 10px;
 }
+a{
+  color:black;
+  text-decoration: none;
+}
 h1{
   font-size: 40px;
   margin-bottom: 1em;
@@ -150,7 +154,7 @@ div#form{
   font-size: 20px;
   background-color: rgb(230,230,230);
   box-shadow: 0 0 5px rgba(0,0,0,.2);
-  margin-bottom: 1em
+  margin-bottom: 1em;
 }
 .slider{
   width: 150px;
@@ -160,6 +164,7 @@ div#form{
   background: white;
   box-shadow: 0 0 5px rgba(0,0,0,.2);
   display: inline-block;
+  margin-bottom: 50px;
 }
 .slider ul{
    height: 150px;
@@ -186,4 +191,31 @@ div#form{
   width:550px;
   margin-left: 40px;
   font-size: 16px;
+}
+.delete,.annuler{
+  float: right;
+  position: relative;
+  bottom: 30px;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  border:1px red solid;
+  background: rgb(250,100,100);
+  color: white;
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
+  font-weight: bold;
+}
+.resultat input[type=submit]{
+
+  float: left;
+  position: relative;
+  bottom: 30px;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  border:1px green solid;
+  background: rgb(100,250,100);
+  color: white;
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
+  font-weight: bold;
 }

@@ -69,7 +69,7 @@
 		echo form_submit('check','Publier');
 		echo form_close();
 	?>
-	<a href="<?php echo site_url();?>">Annuler</a>
+	<a href="<?php echo site_url();?>" class="annuler">Annuler</a>
 	</div>
 	<?php
 	endif;
