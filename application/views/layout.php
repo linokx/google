@@ -13,12 +13,39 @@
        
     <script type="text/javascript">  
        $(function(){  
+
+          /*$(".delete").on('click',function(event){
+              event.preventDefault();
+              var href=$(this).attr('href');
+              var $this = $(this);
+              $.ajax({
+                url: href,
+                success:function(data){
+                  $this.parent().text(data).fadeOut(5000);
+                }
+              });
+            });*/
+          $(".delete").click(function(event){
+              event.preventDefault();
+              var href=$(this).attr('href');
+              var $this = $(this);
+              $.ajax({
+                url: href,
+                success:function(){
+                  $this.parent().text("Lien supprimé").delay(3000).slideUp(1000);
+                }
+              });
+          });
+
+
           setInterval(function(){  
              $(".slider ul").animate({marginLeft:-150},800,function(){  
                 $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));  
              })  
-          }, 3500);  
-       });  
+          }, 3500); 
+
+
+        });  
     </script>  
 </body>
 

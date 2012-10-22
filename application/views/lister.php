@@ -38,10 +38,38 @@
 			?>
 		</ul>
 		</div>
-		<p><?php echo  $texte; ?></p>
+		<p><?php echo  $resume; ?></p>
 			<?php
 		}
+		echo form_open('index.php/annonce/enregistrer',array('method'=>'post'));
+		$fUrlInput = array(
+					'name' => 'fUrl',
+					'type' => 'hidden',
+					'value' => $url
+					);
+		echo form_input($fUrlInput);		
+		$fTitreInput = array(
+					'name' => 'fTitre',
+					'type' => 'hidden',
+					'value' => $titre
+					);
+		echo form_input($fTitreInput);
+		$fResumeInput = array(
+					'name' => 'fResume',
+					'type' => 'hidden',
+					'value' => $resume
+					);
+		echo form_input($fResumeInput);
+		$fImageInput = array(
+					'name' => 'fImage',
+					'type' => 'hidden',
+					'value' => $BDimage
+					);
+		echo form_input($fImageInput);
+		echo form_submit('check','Publier');
+		echo form_close();
 	?>
+	<a href="<?php echo site_url();?>">Annuler</a>
 	</div>
 	<?php
 	endif;
@@ -75,6 +103,7 @@
 						?>
 					</div>
 					<p><?php echo  $annonce->resume; ?></p>
+					<a class="delete" href="annonce/effacer/<?php echo $annonce->id; ?>">Supprimer</a>
 				</div>
 				<?php
 			endforeach;

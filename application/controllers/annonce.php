@@ -34,7 +34,6 @@ class Annonce extends CI_Controller {
 		$this->load->helper('form');
 		$url = $this->input->post('url');
 		$data['annonces'] = $this->M_Annonce->lister();
-		$data['id'] = $this->session->userdata('logged_in');
 		$data['url']= 'http://'.$url;
 		if($url != null):
 			
@@ -76,17 +75,16 @@ class Annonce extends CI_Controller {
 					preg_match('#<\s*meta\s*(name="description")?\s*content="\s*(.*)"\s*(name="description")?\s*>{1}#isU', $resultat,$t, PREG_OFFSET_CAPTURE );
 					if(count($t)){
 						preg_match_all('#^<.*content\s*=\s*"(.*)".*>$#isU',$t[0][0],$texte);
-						$data['texte'] = (count($texte[1])) ? $texte[1][0]: "Aucune description de page";
+						$data['resume'] = (count($texte[1])) ? $texte[1][0]: "Aucune description de page";
 					}
 					else{
-						$data['texte']= "Aucune description de page";
+						$data['resume']= "Aucune description de page";
 					}
-					$this->M_Annonce->ajouter($data);
 
 				}
 				else
 				{
-					$data['texte'] = "Vérifier que vous n'avez pas fait une erreur de frappe.";
+					$data['resume'] = "Vérifier que vous n'avez pas fait une erreur de frappe.";
 					$data['titre'] = "Rien n'a été trouvé à cette adresse.";
 					$data['image'] = "Aucune image";
 					$data['BDimage'] = '';
@@ -96,6 +94,21 @@ class Annonce extends CI_Controller {
 		$dataLayout['main_title'] = "Ressource externe";
 		$dataLayout['vue'] = $this->load->view('lister',$data,true);
 		$this->load->view('layout',$dataLayout);
+	}
+	public function enregistrer(){
+		$data['id'] = $this->session->userdata('logged_in')->membre_id;
+		$data['url'] = $this->input->post('fUrl');
+		$data['titre'] = $this->input->post('fTitre');
+		$data['resume'] = $this->input->post('fResume');
+		$data['DBimage'] = $this->input->post('fImage');
+		$this->load->model('M_Annonce');
+		$this->M_Annonce->ajouter($data);
+		redirect('index.php/annonce');
+	}
+	public function effacer(){
+		$id = $this->uri->segment(3);
+		$this->load->model('M_Annonce');
+		$this->M_Annonce->supprimer($id);
 	}
 }
 ?>
