@@ -9,7 +9,7 @@
 <h1><a href="<?php echo site_url(); ?>">Recherche un site</a></h1>
 	<?php echo $vue; ?>
 
-	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>  
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>  
        
     <script type="text/javascript">  
        $(function(){  
@@ -25,24 +25,39 @@
                 }
               });
             });*/
-          $(".delete").click(function(event){
+			
+
+          /*setInterval(function(){  
+             $(".slider ul").animate({marginLeft:-150},800,function(){  
+                $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));  
+             })  
+          }, 3500); */
+       $('#form').on('submit',function(event){
+          $('#loader').show();
+       });
+		  
+          $(".delete").on('click',function(event){
               event.preventDefault();
               var href=$(this).attr('href');
               var $this = $(this);
               $.ajax({
                 url: href,
                 success:function(){
-                  $this.parent().text("Lien supprimé").delay(3000).slideUp(1000);
+					$hauteur = $this.parent().prev().height();
+					$this.parent().animate({left:650},1000);
+                  $this.parent().prev().css('height',$hauteur).text("Lien supprimé").parent().delay(1500).slideUp(1000);
                 }
               });
           });
+		  $image = $('input[name="fImage"]');
+		  $(".apercu li").on('click',function(event){
+			$(this).parent().children().removeClass('choix');
+			$(this).addClass('choix');
+			$valeur = $(this).children().attr('src');
+			$image.attr('value',$valeur);
+		  });
+		  
 
-
-          setInterval(function(){  
-             $(".slider ul").animate({marginLeft:-150},800,function(){  
-                $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));  
-             })  
-          }, 3500); 
 
 
         });  

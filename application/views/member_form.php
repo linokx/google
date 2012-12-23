@@ -1,22 +1,17 @@
-<div id="member">
-	<h2>Connexion à votre compte</h2>
-	<?php
-		echo form_open('index.php/member/login',array('method'=>'post'));
-		echo form_label('Login','nom');
-		$loginInput = array(
-					'name' => 'nom',
-					'id' => 'nom'
-					);
-		echo form_input($loginInput);
-		echo '<br />';
-		echo form_label('mot de passe','mpd');
-		$mdpInput = array(
-					'name' => 'mdp',
-					'id' => 'mdp'
-					);
-		echo form_password($mdpInput);
-		echo '<br />';
-		echo form_submit('check','vérifier');
-		echo form_close();
-	?>
-</div>
+<h2>Connexion à votre compte</h2>
+<form method="post" id="connect" action="<?php echo site_url(); ?>index.php/member/login">
+	<fieldset>
+		<div>
+			<label for="nom">Login</label><input type="text" id="nom" name="nom" />
+		</div>			
+		<div>
+			<label for="mdp">Password</label><input type="password" id="mdp" name="mdp" />
+		</div>
+		<input type="submit" value="Connexion" />
+	</fieldset>
+</form>
+<!-- Modifier les titres, descriptions, etc.. -->
+<!-- Gestion des erreurs -->
+<!-- Choix des images -->
+
+<!-- Reference des class -->

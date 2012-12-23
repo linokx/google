@@ -1,0 +1,61 @@
+{
+  "name": "",
+  "glyphs": [
+    {
+      "search": [
+        "settings",
+        "cog",
+        "gear"
+      ],
+      "code": 9967,
+      "from": 9967,
+      "uid": "98687378abd1faf8f6af97c254eb6cd6",
+      "css": "cog-alt",
+      "orig_css": "cog-alt",
+      "orig_code": 9967,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "pencil",
+        "write",
+        "reply",
+        "edit"
+      ],
+      "code": 9998,
+      "from": 9998,
+      "uid": "d35a1d35efeb784d1dc9ac18b9b6c2b6",
+      "css": "pencil",
+      "orig_css": "pencil",
+      "orig_code": 9998,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "trash",
+        "delete"
+      ],
+      "code": 59177,
+      "from": 59177,
+      "uid": "f48ae54adfb27d8ada53d0fd9e34ee10",
+      "css": "trash",
+      "orig_css": "trash",
+      "orig_code": 59177,
+      "src": "fontawesome"
+    },
+    {
+      "search": [
+        "login",
+        "signin",
+        "enter"
+      ],
+      "code": 59200,
+      "from": 59200,
+      "uid": "3a00327e61b997b58518bd43ed83c3df",
+      "css": "login",
+      "orig_css": "login",
+      "orig_code": 59200,
+      "src": "fontawesome"
+    }
+  ]
+}

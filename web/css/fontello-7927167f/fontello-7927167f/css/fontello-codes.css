@@ -1,0 +1,5 @@
+
+.icon-cog-alt:before { content: '\26ef'; } /* '⛯' */
+.icon-pencil:before { content: '\270e'; } /* '✎' */
+.icon-trash:before { content: '\e729'; } /* '' */
+.icon-login:before { content: '\e740'; } /* '' */

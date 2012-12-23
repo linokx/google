@@ -86,6 +86,59 @@ ul {
 /************************************************
 /* FIN RESTE MEYER
 ************************************************/
+@font-face {
+  font-family: 'fontello';
+  src: url("font/fontello.eot");
+  src: url("font/fontello.eot?#iefix") format('embedded-opentype'), url("font/fontello.woff") format('woff'), url("font/fontello.ttf") format('truetype'), url("font/fontello.svg#fontello") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: 'fontello';
+  font-style: normal;
+  font-size: 16px;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  opacity: 0.8;
+  /* fix buttons height, for twitter bootstrap */
+
+  line-height: 1em;
+  /* Animation center compensation - magrins should be symmetric */
+
+  /* remove if not needed */
+
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+
+  /* font-size: 120%; */
+
+  /* Uncomment for 3D effect */
+
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+
+}
+.icon-cog-alt:before {
+  content: '\26ef';
+}
+/* '⛯' */
+.icon-pencil:before {
+  content: '\270e';
+}
+/* '✎' */
+.icon-trash:before {
+  content: '\e729';
+}
+/* '' */
+.icon-login:before {
+  content: '\e740';
+}
+/* '' */
 /* CSS Document */
 html * {
   font-family: Helvetica, Arial, sans-serif;
@@ -93,129 +146,347 @@ html * {
 }
 html {
   position: relative;
+  background-color: #DDBB66;
 }
 body {
-  background-color: rgb(200, 180, 150);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-right: 1px white solid;
+  border-left: 1px white solid;
   margin: auto;
   width: 800px;
-  padding: 20px 10px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-a{
-  color:black;
+a {
+  color: black;
   text-decoration: none;
 }
-h1{
+h1 {
   font-size: 40px;
   margin-bottom: 1em;
 }
-h2{
-  font-size: 24px;
+h2 {
+  font-size: 26px;
+  font-weight: bold;
   margin-bottom: 1em;
 }
-div#form{
-  border:1px rgb(150,150,150) solid;
-  padding:10px 20px;
-  border-radius: 10px;
+h2 a:hover {
+  color: #505050;
+}
+h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-top: 15px;
+}
+/*-----------------FORM----------------*/
+div#form {
+  border: 1px #969696 solid;
+  padding: 10px 20px;
+  border-radius: 3px;
   line-height: 22px;
   font-size: 20px;
-  background-color: rgb(240,240,240);
-  box-shadow: 0 0 5px rgba(0,0,0,.2);
-  margin-bottom: 2em
+  background-color: #f0f0f0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2em;
 }
-#form label{
+#form label {
   font-weight: bold;
   line-height: 40px;
 }
-#form input[type=text]{
-  width:40%;
-  margin-right: 50px;
+#form input[type=text] {
+  width: 40%;
+  -margin-right: 50px;
   font-size: 20px;
   height: 34px;
   font-weight: bold;
+  margin: 0;
+  padding: 0;
 }
-
-#form input[type=submit]{
-  width:10%;
-  font-weight: bold;
+#form input[type=submit] {
+  background: #4c61ff;
+  background: -moz-linear-gradient(top, #9cf66f, #50a905);
+  background: -webkit-gradient(linear, center top, center bottom, from(#9cf66f), to(#50a905));
+  background: -o-linear-gradient(top, #9cf66f, #50a905);
+  border: 1px grey solid;
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   color: white;
-  text-shadow:-1px -1px 1px rgba(0,0,0,.4);
-  background: rgb(200,200,200);
-  border:1px grey solid;
-  padding: 10px 80px;
-  border-radius: 10px;
-  background: -moz-linear-gradient(top, rgb(200,200,200), rgb(120,120,120));
-  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  font-weight: bold;
+  margin: 0;
+  padding: 10px 30px;
+  text-align: center;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);
 }
-.resultat{
-  border:1px rgb(150,150,150) solid;
-  padding:20px;
-  border-radius: 10px;
+/*-------------CONNECT--------------*/
+#member {
+  position: relative;
+}
+#connect {
+  background: #EEE;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  padding: 1em;
+  position: relative;
+  text-align: left;
+  width: 30em;
+}
+#connect div {
+  background: #4c61ff;
+  background: -moz-linear-gradient(top, #4c61ff, #0004a5);
+  background: -webkit-gradient(linear, center top, center bottom, from(#4c61ff), to(#0004a5));
+  background: -o-linear-gradient(top, #4c61ff, #0004a5);
+  border: 1px #2532D1 solid;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 6px 5px;
+}
+#connect label {
+  background: #CCC;
+  background: -moz-linear-gradient(top, #ffffff 30%, #cccccc 80%);
+  background: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#eeeeee));
+  border: 1px #999 solid;
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3) inset, 2px 0 2px rgba(0, 0, 0, 0.3);
+  color: rgba(53, 69, 228, 0.1);
+  display: inline-block;
+  font-weight: bold;
+  height: 36px;
+  line-height: 36px;
+  padding-right: 10px;
+  position: relative;
+  text-align: right;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5), 1px 1px 0 rgba(255, 255, 255, 0.5);
+  width: 7em;
+  z-index: 200;
+}
+#connect input[type=text],
+#connect input[type=password] {
+  background: #FFF;
+  border: 1px #999 solid;
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.3) inset;
+  font-size: 16px;
+  height: 34px;
+  padding-left: 10px;
+  position: relative;
+  width: 20.5em;
+  z-index: 100;
+}
+#connect input[type=submit] {
+  background: #4c61ff;
+  background: -moz-linear-gradient(top, #9cf66f, #50a905);
+  background: -webkit-gradient(linear, center top, center bottom, from(#9cf66f), to(#50a905));
+  background: -o-linear-gradient(top, #9cf66f, #50a905);
+  border: 1px #50A905 solid;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0.5em 4em;
+  position: relative;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);
+}
+/*-------------LOG OUT--------------*/
+#logout {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px #969696 solid;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+/*-------------BLOC---------------*/
+.bloc {
+  position: relative;
+}
+.bloc .lien {
+  height: 10px;
+  position: absolute;
+  right: 10px;
+  text-align: right;
+  top: 15px;
+  z-index: 5000;
+}
+.bloc .lien span {
+  padding: 10px 0;
+}
+.bloc .lien a {
+  display: block;
+  padding: 5px 2px;
+  margin: 5px 0;
+}
+.bloc .lien div {
+  background: #FFF;
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.2);
+  display: none;
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-align: left;
+}
+.bloc .lien:hover div {
+  display: block;
+}
+.bloc .lien a {
+  padding: 5px;
+}
+.bloc .lien a:hover {
+  background: rgba(0, 0, 255, 0.2);
+}
+.resultat,
+.apercu {
+  border: 1px #969696 solid;
+  padding: 20px;
+  border-radius: 3px;
   line-height: 22px;
   font-size: 20px;
-  background-color: rgb(230,230,230);
-  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  background-color: #e6e6e6;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   margin-bottom: 1em;
+  z-index: 50;
+  position: relative;
 }
-.slider{
+/*--------------SLIDER-------------*/
+.slider {
   width: 150px;
   height: 150px;
-  overflow: hidden;  
-  border: 5px solid #F2F2F2; 
+  overflow: hidden;
+  border: 5px solid #F2F2F2;
   background: white;
-  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   display: inline-block;
   margin-bottom: 50px;
 }
-.slider ul{
-   height: 150px;
-   width: 400%;
-   padding:0;
-   margin:0;  
-   list-style: none;  
+.slider ul {
+  height: 150px;
+  width: 400%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-.slider li{
-  float: left;  
+.slider li {
+  float: left;
   width: 150px;
   height: 100%;
   overflow: hidden;
 }
-.slider img{
+.slider img {
   min-width: 100%;
   height: 100%;
-
 }
-.resultat p{
+/*--------------RESULTAT------------------*/
+.resultat textarea,
+.resultat p {
   display: inline-block;
-  height: 150px;
   overflow: hidden;
-  width:550px;
-  margin-left: 40px;
+  width: 550px;
+  margin-left: 30px;
   font-size: 16px;
+  border: none;
+  height: 150px;
+  border: 5px solid #F2F2F2;
+  background-color: white;
+  margin-top: 0;
 }
-.delete,.annuler{
+.resultat p {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.apercu form {
+  display: block;
+  margin-bottom: 20px;
+}
+.apercu .slider {
+  padding: 0px;
+  border: none;
+  overflow: visible;
+  box-shadow: none;
+  width: auto;
+  background-color: transparent;
+  margin-bottom: 35px;
+  height: auto;
+}
+.apercu textarea {
+  height: 150px;
+  width: 100%;
+  padding: 5px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+.apercu ul {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.apercu li ~ li {
+  margin-left: 20px;
+}
+.apercu li {
+  padding: 5px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
+  float: none;
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+.apercu li:hover,
+.apercu li.choix {
+  box-shadow: 0 0 3px rgba(50, 50, 200, 0.8) inset;
+}
+.apercu li.choix:after {
+  position: absolute;
+  bottom: 0px;
+  content: url('v.png');
+}
+.apercu img {
+  width: 120px;
+  height: 120px;
+}
+.resultat .erreur {
+  margin-left: 0px;
+  margin-bottom: 50px;
+  display: block;
+  width: 750px;
+  height: auto;
+  padding: 4px;
+  border: 1px solid red;
+  box-shadow: 0 0 5px #ff0000;
+}
+.annuler {
   float: right;
   position: relative;
-  bottom: 30px;
+  bottom: 25px;
   font-size: 16px;
   padding: 5px;
   border-radius: 5px;
-  border:1px red solid;
-  background: rgb(250,100,100);
+  border: 1px red solid;
+  background: #fa6464;
   color: white;
-  box-shadow: 0 0 3px rgba(0,0,0,.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   font-weight: bold;
 }
-.resultat input[type=submit]{
-
-  float: left;
+.apercu input[type=submit] {
+  -float: left;
   position: relative;
-  bottom: 30px;
+  bottom: -30px;
+  display: block;
   font-size: 16px;
   padding: 5px;
   border-radius: 5px;
-  border:1px green solid;
-  background: rgb(100,250,100);
+  border: 1px green solid;
+  background: #64fa64;
   color: white;
-  box-shadow: 0 0 3px rgba(0,0,0,.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   font-weight: bold;
 }
